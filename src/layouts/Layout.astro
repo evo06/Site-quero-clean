@@ -1,0 +1,274 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Serviço profissional de limpeza de estofados, sofás e tapetes. Transformamos seu ambiente com qualidade e excelência.">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="logo">
+					<img src="/public/images/logo.png" alt="Quero Clean Logo" />
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#inicio">Início</a></li>
+						<li><a href="#sobre">Sobre</a></li>
+						<li><a href="#servicos">Serviços</a></li>
+						<li><a href="#portfolio">Portfólio</a></li>
+						<li><a href="#depoimentos">Depoimentos</a></li>
+						<li><a href="#contato" class="btn-primary">Solicitar Orçamento</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<slot />
+		
+		<footer>
+			<div class="container">
+				<div class="footer-content">
+					<div class="footer-logo">
+						<img src="/public/images/logo.png" alt="Quero Clean Logo" />
+						<p>Transformando ambientes com qualidade e excelência.</p>
+					</div>
+					<div class="footer-links">
+						<h3>Links Rápidos</h3>
+						<ul>
+							<li><a href="#inicio">Início</a></li>
+							<li><a href="#sobre">Sobre</a></li>
+							<li><a href="#servicos">Serviços</a></li>
+							<li><a href="#portfolio">Portfólio</a></li>
+							<li><a href="#depoimentos">Depoimentos</a></li>
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+					</div>
+					<div class="footer-contact">
+						<h3>Contato</h3>
+						<p><strong>WhatsApp:</strong> (21) 96502-9281</p>
+						<p><strong>Email:</strong> querocleanoficial@gmail.com</p>
+						<div class="social-media">
+							<a href="https://instagram.com/querocleanoficial" target="_blank" rel="noopener noreferrer">
+								<img src="/public/images/icons8-instagram.svg" alt="Instagram" />
+							</a>
+							<a href="https://facebook.com/profile.php?id=61567782160123" target="_blank" rel="noopener noreferrer">
+								<img src="/public/images/icons8-facebook-novo.svg" alt="Facebook" />
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="copyright">
+					<p>&copy; 2024 Quero Clean. Todos os direitos reservados.</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--primary-color: #5190cb;
+		--secondary-color: #ebd254;
+		--accent-color: #3a6b99;
+		--light-blue: #e8f1f8;
+		--light-yellow: #fdf7e2;
+		--text-dark: #333333;
+		--text-light: #666666;
+		--white: #ffffff;
+		--gray-light: #f5f5f5;
+		--gray: #e0e0e0;
+	}
+	
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	html {
+		font-family: 'Poppins', sans-serif;
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		color: var(--text-dark);
+		line-height: 1.6;
+	}
+	
+	.container {
+		width: 90%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	
+	a {
+		text-decoration: none;
+		color: inherit;
+		transition: color 0.3s ease;
+	}
+	
+	ul {
+		list-style: none;
+	}
+	
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	.btn-primary {
+		background-color: var(--primary-color);
+		color: var(--white);
+		padding: 12px 24px;
+		border-radius: 30px;
+		font-weight: 500;
+		display: inline-block;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+	}
+	
+	.btn-primary:hover {
+		background-color: var(--accent-color);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	.btn-secondary {
+		background-color: var(--secondary-color);
+		color: var(--text-dark);
+		padding: 12px 24px;
+		border-radius: 30px;
+		font-weight: 500;
+		display: inline-block;
+		transition: all 0.3s ease;
+		border: none;
+		cursor: pointer;
+	}
+	
+	.btn-secondary:hover {
+		background-color: #d9c048;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	section {
+		padding: 80px 0;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 20px;
+		line-height: 1.2;
+	}
+	
+	p {
+		margin-bottom: 15px;
+	}
+	
+	/* Header Styles */
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: var(--white);
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+		padding: 15px 0;
+	}
+	
+	header .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.logo img {
+		height: 40px;
+	}
+	
+	nav ul {
+		display: flex;
+		gap: 30px;
+		align-items: center;
+	}
+	
+	nav a:hover {
+		color: var(--primary-color);
+	}
+	
+	/* Footer Styles */
+	footer {
+		background-color: var(--light-blue);
+		padding: 60px 0 20px;
+	}
+	
+	.footer-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 40px;
+		margin-bottom: 40px;
+	}
+	
+	.footer-logo img {
+		height: 50px;
+	}
+
+	.footer-logo p {
+		margin-top: 15px;
+	}
+	
+	.footer-links ul {
+		margin-top: 15px;
+	}
+	
+	.footer-links li {
+		margin-bottom: 10px;
+	}
+	
+	.footer-contact p {
+		margin-bottom: 10px;
+	}
+	
+	.social-media {
+		display: flex;
+		gap: 15px;
+		margin-top: 15px;
+	}
+	
+	.social-media img {
+		width: 20px;
+		/* height: 30px; */
+	}
+	
+	.copyright {
+		text-align: center;
+		padding-top: 20px;
+		border-top: 1px solid var(--gray);
+	}
+	
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		nav ul {
+			display: none;
+		}
+		
+		/* Aqui você pode adicionar um menu mobile */
+	}
+</style>

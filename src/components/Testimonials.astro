@@ -1,0 +1,297 @@
+---
+const testimonials = [
+    {
+        name: "Ana Silva",
+        location: "Rio de Janeiro, RJ",
+        text: "Serviço excepcional! Meu sofá parecia novo depois da limpeza. A equipe foi pontual, profissional e cuidadosa. Recomendo a todos!",
+        image: "/public/images/pasta sem título/ana.jpg",
+        rating: 5
+    },
+    {
+        name: "Carlos Oliveira",
+        location: "Rio de Janeiro, RJ",
+        text: "Contratei para limpar meus tapetes que estavam com manchas difíceis. O resultado foi incrível, todas as manchas saíram e o cheiro ficou maravilhoso.",
+        image: "/public/images/pasta sem título/carlos.jpg",
+        rating: 5
+    },
+    {
+        name: "Mariana Costa",
+        location: "Niterói, RJ",
+        text: "Já é a terceira vez que contrato os serviços da Quero Clean e sempre fico impressionada com a qualidade. Meus estofados ficam como novos!",
+        image: "/public/images/pasta sem título/mariana.jpg",
+        rating: 5
+    },
+    {
+        name: "Roberto Almeida",
+        location: "Rio de Janeiro, RJ",
+        text: "Profissionais extremamente capacitados. Meu sofá tinha manchas que eu achava impossíveis de remover, mas eles conseguiram. Super satisfeito!",
+        image: "/public/images/pasta sem título/roberto.jpg",
+        rating: 4
+    }
+];
+---
+
+<section id="depoimentos" class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>Depoimentos</h2>
+            <p>O que nossos clientes dizem sobre nossos serviços</p>
+        </div>
+        
+        <div class="testimonials-carousel-container">
+                <div class="testimonials-carousel">
+                    {testimonials.map((testimonial, index) => (
+                        <div class="testimonial-card">
+                            <div class="testimonial-image">
+                                <img src={testimonial.image} alt={testimonial.name} />
+                            </div>
+                            <div class="testimonial-content">
+                                <div class="rating">
+                                    {Array(testimonial.rating).fill().map(() => (
+                                        <span class="star">★</span>
+                                    ))}
+                                </div>
+                                <p class="testimonial-text">"{testimonial.text}"</p>
+                                <div class="testimonial-author">
+                                    <h4>{testimonial.name}</h4>
+                                    <p>{testimonial.location}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-control prev" aria-label="Anterior">❮</button>
+                    <button class="carousel-control next" aria-label="Próximo">❯</button>
+                </div>
+            </div>
+        
+        <div class="testimonials-cta">
+            <h3>Junte-se aos nossos clientes satisfeitos</h3>
+            <a href="#contato" class="btn-primary">Solicitar Orçamento</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .testimonials {
+        background-color: var(--light-yellow);
+    }
+    
+    .testimonials-carousel-container {
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+        margin-bottom: 50px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .testimonials-carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 30px;
+    }
+    
+    .testimonial-card {
+        background-color: var(--white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+    }
+    
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .carousel-control {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+    
+    .carousel-control:hover {
+        background-color: var(--accent-color);
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .testimonial-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .testimonial-content {
+        padding: 25px;
+    }
+    
+    .rating {
+        margin-bottom: 15px;
+    }
+    
+    .star {
+        color: var(--secondary-color);
+        font-size: 1.2rem;
+        margin-right: 2px;
+    }
+    
+    .testimonial-text {
+        font-style: italic;
+        color: var(--text-light);
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: var(--text-dark);
+    }
+    
+    .testimonial-author p {
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+    
+    .testimonials-cta {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .testimonials-cta h3 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+    }
+    
+    @media (max-width: 768px) {
+        .testimonial-card {
+            flex: 0 0 calc(100% - 30px);
+            max-width: calc(100% - 30px);
+        }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .testimonial-card {
+            flex: 0 0 calc(50% - 30px);
+            max-width: calc(50% - 30px);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.querySelector('.testimonials-carousel');
+        const cards = document.querySelectorAll('.testimonial-card');
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        
+        if (!carousel || !cards.length || !prevBtn || !nextBtn) return;
+        
+        let currentIndex = 0;
+        const cardWidth = cards[0].offsetWidth + 30; // Card width + gap
+        const totalCards = cards.length;
+        const visibleCards = Math.floor(carousel.offsetWidth / cardWidth);
+        const maxIndex = totalCards - visibleCards;
+        
+        // Clone cards for infinite loop effect
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            carousel.appendChild(clone);
+        });
+        
+        // Auto scroll
+        let autoScrollInterval = setInterval(scrollRight, 5000);
+        
+        function scrollLeft() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarouselPosition();
+            } else {
+                // Jump to end for smooth loop
+                currentIndex = maxIndex;
+                carousel.style.transition = 'none';
+                updateCarouselPosition();
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease';
+                }, 50);
+            }
+            
+            resetAutoScroll();
+        }
+        
+        function scrollRight() {
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateCarouselPosition();
+            } else {
+                // Jump to start for smooth loop
+                currentIndex = 0;
+                carousel.style.transition = 'none';
+                updateCarouselPosition();
+                setTimeout(() => {
+                    carousel.style.transition = 'transform 0.5s ease';
+                }, 50);
+            }
+            
+            resetAutoScroll();
+        }
+        
+        function updateCarouselPosition() {
+            carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        }
+        
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(scrollRight, 5000);
+        }
+        
+        // Event listeners
+        prevBtn.addEventListener('click', scrollLeft);
+        nextBtn.addEventListener('click', scrollRight);
+        
+        // Pause auto-scroll on hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoScrollInterval);
+        });
+        
+        carousel.addEventListener('mouseleave', () => {
+            autoScrollInterval = setInterval(scrollRight, 5000);
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const newCardWidth = cards[0].offsetWidth + 30;
+            const newVisibleCards = Math.floor(carousel.offsetWidth / newCardWidth);
+            const newMaxIndex = totalCards - newVisibleCards;
+            
+            if (currentIndex > newMaxIndex) {
+                currentIndex = newMaxIndex;
+            }
+            
+            updateCarouselPosition();
+        });
+        
+        // Initial position
+        updateCarouselPosition();
+    });
+</script>

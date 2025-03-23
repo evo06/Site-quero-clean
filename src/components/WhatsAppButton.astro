@@ -1,0 +1,63 @@
+---
+---
+
+<div class="whatsapp-button">
+    <a href="https://wa.me/5521965029281" target="_blank" rel="noopener noreferrer">
+        <img src="/images/whatsapp-icon.svg" alt="WhatsApp" />
+        <span>Fale Conosco</span>
+    </a>
+</div>
+
+<style>
+    .whatsapp-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+    }
+    
+    .whatsapp-button a {
+        display: flex;
+        align-items: center;
+        background-color: #25D366;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+    
+    .whatsapp-button a:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .whatsapp-button img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+    
+    .whatsapp-button span {
+        font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+        .whatsapp-button {
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .whatsapp-button a {
+            padding: 10px 16px;
+        }
+        
+        .whatsapp-button span {
+            display: none;
+        }
+        
+        .whatsapp-button img {
+            margin-right: 0;
+        }
+    }
+</style>

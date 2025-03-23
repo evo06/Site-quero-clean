@@ -1,0 +1,208 @@
+---
+---
+
+<section id="contato" class="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Entre em Contato</h2>
+            <p>Solicite um orçamento ou tire suas dúvidas</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="icon">
+                        <img src="/public/images/icons8-whatsapp.svg" alt="WhatsApp" />
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Atendimento rápido via mensagem</p>
+                    <a href="https://wa.me/5521965029281" target="_blank" class="btn-secondary">Enviar Mensagem</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon">
+                        <img src="/public/images/icons8-instagram.svg" alt="Instagram" />
+                    </div>
+                    <h3>Instagram</h3>
+                    <p>Siga-nos e veja nossos trabalhos</p>
+                    <a href="https://instagram.com/querocleanoficial" target="_blank" class="btn-secondary">Seguir</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="icon">
+                        <img src="/public/images/email-svgrepo-com.svg" alt="Email" />
+                    </div>
+                    <h3>Email</h3>
+                    <p>Envie sua mensagem por email</p>
+                    <a href="mailto:querocleanoficial@gmail.com" class="btn-secondary">Enviar Email</a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Solicite um Orçamento</h3>
+                <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível.</p>
+                
+                <form action="https://formspree.io/f/xdkegebn" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone/WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Serviço Desejado</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="sofa">Limpeza de Sofá</option>
+                            <option value="carpet">Limpeza de Tapete</option>
+                            <option value="mattress">Limpeza de Colchão</option>
+                            <option value="chair">Limpeza de Poltrona</option>
+                            <option value="other">Outro</option>
+                        </select>
+                    </div>
+                    
+                    <!-- <div class="form-group">
+                        <label for="photo">Foto do Item</label>
+                        <div class="file-input-container">
+                            <input type="file" id="photo" name="photo" accept="image/*" class="file-input" required>
+                            <div class="file-input-button">
+                                <span>Escolher Arquivo</span>
+                            </div>
+                            <div class="file-name">Nenhum arquivo selecionado</div>
+                        </div>
+                        <p class="input-help">Envie uma foto do estofado para um orçamento mais rápido e preciso.</p>
+                    </div> -->
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Enviar Solicitação</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact {
+        background-color: var(--white);
+    }
+    
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 40px;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-card {
+        background-color: var(--light-blue);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .contact-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .contact-card .icon {
+        margin-bottom: 15px;
+    }
+    
+    .contact-card .icon img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .contact-card p {
+        color: var(--text-light);
+        margin-bottom: 15px;
+    }
+    
+    .contact-form {
+        background-color: var(--light-blue);
+        padding: 30px;
+        border-radius: 10px;
+    }
+    
+    .contact-form h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .contact-form p {
+        color: var(--text-light);
+        margin-bottom: 25px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--gray);
+        border-radius: 5px;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+    }
+    
+    @media (max-width: 768px) {
+        .contact-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .contact-info {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .contact-card {
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+    }
+</style>

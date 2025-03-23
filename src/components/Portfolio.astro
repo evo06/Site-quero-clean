@@ -1,0 +1,136 @@
+---
+const portfolioItems = [
+    {
+        title: "Sofá de 3 Lugares",
+        description: "Remoção de manchas profundas e revitalização completa",
+        beforeImage: "/images/before-sofa1.jpg",
+        afterImage: "/images/after-sofa1.jpg"
+    },
+    {
+        title: "Tapete de Sala",
+        description: "Limpeza profunda e remoção de odores",
+        beforeImage: "/images/before-carpet1.jpg",
+        afterImage: "/images/after-carpet1.jpg"
+    },
+    {
+        title: "Poltrona Reclinável",
+        description: "Higienização e remoção de manchas de café",
+        beforeImage: "/images/before-chair1.jpg",
+        afterImage: "/images/after-chair1.jpg"
+    },
+    {
+        title: "Sofá em L",
+        description: "Limpeza completa e proteção contra manchas",
+        beforeImage: "/images/before-sofa2.jpg",
+        afterImage: "/images/after-sofa2.jpg"
+    }
+];
+---
+
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="section-header">
+            <h2>Nosso Portfólio</h2>
+            <p>Veja a transformação dos estofados com nosso serviço</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            {portfolioItems.map((item, index) => (
+                <div class="portfolio-item">
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <div class="before-after">
+                        <div class="before">
+                            <span>Antes</span>
+                            <img src={item.beforeImage} alt={`Antes - ${item.title}`} />
+                        </div>
+                        <div class="after">
+                            <span>Depois</span>
+                            <img src={item.afterImage} alt={`Depois - ${item.title}`} />
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+        
+        <div class="portfolio-cta">
+            <a href="#contato" class="btn-primary">Quero este resultado</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .portfolio {
+        background-color: var(--white);
+    }
+    
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    
+    .portfolio-item {
+        background-color: var(--light-blue);
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .portfolio-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .portfolio-item p {
+        color: var(--text-light);
+        margin-bottom: 20px;
+    }
+    
+    .before-after {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .before, .after {
+        position: relative;
+    }
+    
+    .before span, .after span {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        z-index: 1;
+    }
+    
+    .before img, .after img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .before:hover img, .after:hover img {
+        transform: scale(1.05);
+    }
+    
+    .portfolio-cta {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    @media (max-width: 768px) {
+        .before-after {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,154 @@
+---
+---
+
+<section id="sobre" class="about">
+    <div class="container">
+        <div class="section-header">
+            <h2>Quem Somos</h2>
+            <p>Conheça a Quero Clean e nossa missão de transformar ambientes</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-image">
+                <img src="/public/images/pasta sem título/vagner.jpeg" alt="Equipe Quero Clean" />
+            </div>
+            <div class="about-text">
+                <h3>Excelência em limpeza de estofados</h3>
+                <p>A Quero Clean nasceu da paixão por transformar ambientes e proporcionar bem-estar às pessoas. Com experiência no mercado, nos especializamos na limpeza profissional de estofados, sofás e tapetes.</p>
+                
+                <p>Nossa equipe é formada por profissionais treinados e certificados, que utilizam técnicas modernas e produtos de alta qualidade para garantir resultados excepcionais em cada serviço.</p>
+                
+                <div class="about-features">
+                    <div class="feature">
+                        <img src="/images/icon-quality.svg" alt="Ícone de Qualidade" />
+                        <div>
+                            <h4>Qualidade Garantida</h4>
+                            <p>Utilizamos produtos e equipamentos de alta performance</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <img src="/images/icon-experience.svg" alt="Ícone de Experiência" />
+                        <div>
+                            <h4>Experiência Comprovada</h4>
+                            <p>Anos de experiência no mercado de limpeza profissional</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <img src="/images/icon-satisfaction.svg" alt="Ícone de Satisfação" />
+                        <div>
+                            <h4>Satisfação do Cliente</h4>
+                            <p>Centenas de clientes satisfeitos com nossos serviços</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about {
+        background-color: var(--white);
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.2rem;
+        color: var(--primary-color);
+        position: relative;
+        display: inline-block;
+    }
+    
+    .section-header h2::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background-color: var(--secondary-color);
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .section-header p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+    
+    .about-image img {
+        width: 60%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-text h3 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+    }
+    
+    .about-text p {
+        margin-bottom: 20px;
+        color: var(--text-light);
+    }
+    
+    .about-features {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .feature img {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+        background-color: var(--light-blue);
+        border-radius: 50%;
+    }
+    
+    .feature h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+        color: var(--text-dark);
+    }
+    
+    .feature p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .about-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .about-image {
+            order: 1;
+        }
+        
+        .about-text {
+            order: 2;
+        }
+    }
+</style>
