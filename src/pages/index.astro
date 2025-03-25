@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Services from '../components/Services.astro';
-import Portfolio from '../components/Portfolio.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Contact from '../components/Contact.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
@@ -15,8 +14,18 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 		<About />
 		<Services />
 		<!-- <Portfolio /> -->
-		<Testimonials />
+		<div class="desktop-only">
+			<Testimonials />
+		</div>
 		<Contact />
 		<WhatsAppButton />
 	</main>
 </Layout>
+
+<style>
+	@media (max-width: 768px) {
+		.desktop-only {
+			display: none;
+		}
+	}
+</style>

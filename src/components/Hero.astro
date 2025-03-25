@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="/public/images/pasta sem título/limpezas/432024180_909476353972296_764544.png" alt="Sofá limpo e higienizado" />
+            <img src="/public/images/pasta/limpezas/432024180_909476353972296_764544.png" alt="Sofá limpo e higienizado" />
         </div>
     </div>
 </section>
@@ -56,6 +56,8 @@
     
     .hero-image {
         position: relative;
+        display: flex;
+        justify-content: flex-end;
     }
     
     .hero-image img {
@@ -80,11 +82,13 @@
     @media (max-width: 768px) {
         .hero .container {
             grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
         }
         
         .hero-content {
             text-align: center;
-            order: 2;
+            order: 1;
         }
         
         .hero-content p {
@@ -96,8 +100,20 @@
         }
         
         .hero-image {
-            order: 1;
-            margin-bottom: 30px;
+            order: 2;
+            margin-top: 30px;
+            margin-bottom: 0;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            max-width: 85%;
+        }
+        
+        .hero-image::before {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
         }
     }
 </style>

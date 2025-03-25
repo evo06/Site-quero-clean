@@ -10,7 +10,7 @@
         
         <div class="about-content">
             <div class="about-image">
-                <img src="/public/images/pasta sem título/vagner.jpeg" alt="Equipe Quero Clean" />
+                <img src="/public/images/pasta/vagner.jpeg" alt="Equipe Quero Clean" />
             </div>
             <div class="about-text">
                 <h3>Excelência em limpeza de estofados</h3>
@@ -95,6 +95,12 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
     
+    @media (max-width: 768px) {
+        .about-image img {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
     .about-text h3 {
         font-size: 1.8rem;
         margin-bottom: 20px;
@@ -145,10 +151,26 @@
         
         .about-image {
             order: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 80%;
+            margin: 0 auto;
         }
         
         .about-text {
             order: 2;
+            text-align: center;
+        }
+        
+        .feature {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .feature img {
+            margin: 0 auto 10px;
         }
     }
 </style>
