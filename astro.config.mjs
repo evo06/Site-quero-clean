@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel/static';
 
 export default defineConfig({
   site: 'https://queroclean.com.br',
-  integrations: [],
   output: 'static',
-  // Add this if not already present
+  adapter: vercel(),
   vite: {
     ssr: {
       noExternal: ['zod']

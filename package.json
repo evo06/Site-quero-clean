@@ -1,18 +1,17 @@
 {
   "name": "quero-clean",
-  "type": "module",
   "version": "0.0.1",
+  "dependencies": {
+    "astro": "3.6.4",
+    "zod": "^3.22.4"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
-  "dependencies": {
-    "@astrojs/prism": "^3.2.0",
-    "@astrojs/telemetry": "^3.2.0",
-    "astro": "^5.5.5",
-    "prismjs": "^1.30.0"
+  "devDependencies": {
+    "@astrojs/vercel": "^5.0.2"
   }
 }
